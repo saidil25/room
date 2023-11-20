@@ -19,8 +19,9 @@ interface NoteDao {
     @Delete
     fun delete(note: Note)
 
-    @get:Query("SELECT * FROM note_table ORDER BY id ASC")
-    val allNotes: LiveData<List<Note>>
+    @Query("SELECT * FROM note_table ORDER BY id ASC")
+    fun getAllNotes(): LiveData<List<Note>>
+
 
 
 }
